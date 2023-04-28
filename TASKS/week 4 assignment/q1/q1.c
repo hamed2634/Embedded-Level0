@@ -48,4 +48,8 @@ int main()
     printf("----------------------------------------------\n");
     printf("The Array After Sorting: \n");
     print_array(arr, n);
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);
 }

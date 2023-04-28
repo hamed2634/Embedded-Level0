@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> 
 
 struct employee{
     double salary;
@@ -32,4 +32,9 @@ int main()
     mariam = getdata();
     double total = net(mohsen) + net(maged) + net(mariam);
     printf("\nTotal Value = %.2lf",total);
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);
+	return 0;
 }

@@ -12,6 +12,10 @@ int main()
     scanf("%d%d",&a,&b);
     swap();
     printf("The Numbers after swaping: %d, %d",a, b);
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);	
 }
 
 

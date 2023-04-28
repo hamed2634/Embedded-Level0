@@ -7,4 +7,9 @@ int main()
     int a,b,c; scanf("%d%d%d",&a,&b,&c);
     int max = (a>b)? ((a>c)? a :c) : ((b>c)? b :c) ;
     printf("The Maximum Number = %d",max);
-}s
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);	
+    return 0;	
+}

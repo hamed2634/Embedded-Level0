@@ -8,4 +8,8 @@ int main()
     int *p = &x;
     *p = 20;
     printf("Value After Edit: %d\n",x);
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);
 }

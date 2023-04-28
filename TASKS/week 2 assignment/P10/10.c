@@ -15,5 +15,9 @@ int main()
         }
     }while(--n &&printf("You Are Not Registered.\n"));
     if(n == 0) printf("No More Tries");
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);	
     return 0;
 }

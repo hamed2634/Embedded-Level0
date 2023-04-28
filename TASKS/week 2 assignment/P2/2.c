@@ -9,5 +9,9 @@ int main()
         printf("Odd\n");
     else
         printf("Even\n");
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);	
     return 0;
 }

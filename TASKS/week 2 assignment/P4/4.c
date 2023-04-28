@@ -11,4 +11,9 @@ int main()
     else if(grade >= 50) printf("Your rating is \"Pass\".");
     else if(grade >= 30) printf("Your rating is \"Weak\".");
     else printf("Your rating is \"Very Weak\".");
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);	
+    return 0;	
 }

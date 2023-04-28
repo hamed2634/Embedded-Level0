@@ -18,14 +18,29 @@ struct student{
 
 char* takestring(){
     char* s = (char *)calloc(1,sizeof(char));
-    int len = 0;
+    int len = 1;
+    *s = '\0';
     char t;
-    while(scanf("%c",&t) && t != '\n'){
-        s = (char *)realloc(s,len + 1);
-        *(s+len) = t;
-        *(s+len+1) = '\0';
-        len++;
+    t = getchar();
+    int c = 1;
+    while(t != '\n'){
+        if(c == len)
+        {
+            s = (char *)realloc(s, (2 * len) * sizeof(char));
+            len = 2 * len;
+        }
+        *(s + c - 1) = t;
+        *(s + c) = '\0';
+        c++;
+        t = getchar();
     }
+	fflush(stdin);
+	if(len == 1)  return takestring();
+	if(*s == ' ') {
+		printf("Cannot Start With Spaces!\nEnter Again: ");
+		return takestring();
+	}
+
     return s;
 }
 
@@ -45,7 +60,6 @@ enum Bool found_admin(char *s, struct admin* arrptr){
 
 char* verify_student(struct student* arrptr){
     char *id;
-    while(getchar() != '\n');
     do{
         id = takestring();
     }
@@ -55,7 +69,6 @@ char* verify_student(struct student* arrptr){
 
 char* verify_admin(struct admin* arrptr){
     char *id;
-    while(getchar() != '\n');
     do{
         id = takestring();
     }
@@ -141,4 +154,8 @@ int main()
         char *id = verify_admin(admins);
         changedegrees(students);
     }
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);
 }

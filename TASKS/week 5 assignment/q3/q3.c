@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int scalar(int *p,int *q, int n){
     int sum = 0;
-    for(int limit = p + n ; p < limit ; p++,q++){
+    for(int* limit = p + n ; p < limit ; p++,q++){
         sum += (*p) * (*q);
     }
     return sum;
@@ -24,4 +24,8 @@ int main()
         scanf("%d",&b[i]);
     }
     printf("\nThe Scalar Multiplication = %d",scalar(a,b,n));
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);	
 }

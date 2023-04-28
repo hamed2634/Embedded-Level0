@@ -17,4 +17,8 @@ int main()
         if(arr[i] > max)
             max = arr[i];
     printf("The Max Element = %d",max);
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);
 }

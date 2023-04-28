@@ -1,17 +1,32 @@
-#include <iostream>
+#include <stdio.h>
+#include <ctype.h> 
 #include <stdlib.h>
 #include <string.h>
-using namespace std;
 char* takestring(){
     char* s = (char *)calloc(1,sizeof(char));
-    int len = 0;
+    int len = 1;
+    *s = '\0';
     char t;
-    while(scanf("%c",&t) && t != '\n'){
-        s = (char *)realloc(s,len + 1);
-        *(s+len) = t;
-        *(s+len+1) = '\0';
-        len++;
+    t = getchar();
+    int c = 1;
+    while(t != '\n'){
+        if(c == len)
+        {
+            s = (char *)realloc(s, (2 * len) * sizeof(char));
+            len = 2 * len;
+        }
+        *(s + c - 1) = t;
+        *(s + c) = '\0';
+        c++;
+        t = getchar();
     }
+	fflush(stdin);
+	if(len == 1)  return takestring();
+	if(*s == ' ') {
+		printf("Cannot Start With Spaces!\nEnter Again: ");
+		return takestring();
+	}
+
     return s;
 }
 int main()
@@ -28,4 +43,8 @@ int main()
         else special++;
     }
     printf("\nThere Are: \n\n%d Alphabets\n%d Digits\n%d Special Characters\n\n", alphas, digits, special);
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);
 }

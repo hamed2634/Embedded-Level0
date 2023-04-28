@@ -23,4 +23,8 @@ int main()
     }
     printf("----------------------------------------------\n");
     print_repeated(arr, n);
+	
+	//readline to prevent file from closing
+	printf("\n\nEnter anything To Close\n");
+    int tempvar; scanf("%d",&tempvar);
 }
